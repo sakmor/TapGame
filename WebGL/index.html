@@ -28,7 +28,7 @@
 		$(document).ready(function () {
 			$("video").hide();
 			myVid = document.getElementById("myVideo");
-			myVid.onloadedmetadata = hiedLoader();
+			myVid.onloadedmetadata = () => { hiedLoader(); }
 			document.addEventListener('pointerdown', musicPlay);
 			// Handler for .ready() called.
 			$(".start").click(function () {

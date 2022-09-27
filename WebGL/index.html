@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Unity WebGL Player | Tap</title>
+	<link rel="stylesheet" href="main.css">
+	<!-- <script src="main.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+		integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body style="text-align: center">
+	<div class="loader"></div>
+	<div class="video-wrap">
+		<canvas id="unity-canvas" width=1366 height=768
+			style="width: 1366px; height: 768px; background: #231F20 ;top: 60pt"></canvas>
+		<center><video id="myVideo"
+				src="https://drive.google.com/uc?export=download&id=1ylrdtOnDvqbb5_pouizOi4Ufied1eFeQ" type='video/mp4'" autoplay loop playsinline muted></video></center>
+		<img class=" start" src="./img/GAME setting-38 .png" alt="">
+	</div>
+
+	<script src="Build/WebGL.loader.js"></script>
+	<script id="customerLandscape" src="js/landscape.js" charset="utf-8" isvertical="0"></script>
+	<script>
+		$(document).ready(function () {
+			document.addEventListener('pointerdown', musicPlay);
+			// Handler for .ready() called.
+			$(".start").click(function () {
+				$(".start").hide();
+				$("video").remove();
+				myFunction();
+			});
+		});
+		if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+			// Mobile device style: fill the whole browser client area with the game canvas:
+			var meta = document.createElement('meta');
+			meta.name = 'viewport';
+			meta.content = 'width=device-width, height=device-height, initial-scale=0.4, user-scalable=no, shrink-to-fit=yes';
+			document.getElementsByTagName('head')[0].appendChild(meta);
+		}
+		var myGameInstance = null;
+		myGameInstance = createUnityInstance(document.querySelector("#unity-canvas"), {
+			dataUrl: "Build/82537c57c06def8ed138acd439e3ddfa.data",
+			frameworkUrl: "Build/6fd81cc239591c07bf679b42f2457ba9.js",
+			codeUrl: "Build/92b1f286cfe7fed07769af0f654be38d.wasm",
+			streamingAssetsUrl: "StreamingAssets",
+			companyName: "mipipi",
+			productName: "Tap",
+			productVersion: "1.0",
+			// matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+			// devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+		}, (p) => { if (p >= 1) hiedLoader() });
+
+		var vid = document.getElementById("myVideo");
+		vid.oncanplay = function () {
+			hiedLoader();
+		};
+
+		function myFunction() {
+			myGameInstance.then((unityInstance) => {
+				unityInstance.SendMessage("Main", "DoStartGame");
+			});
+		}
+
+		var count = 0;
+		function hiedLoader() {
+			count++;
+			if (count >= 2) setTimeout(() => { $(".loader").hide() }, 3000);
+		}
+
+		function musicPlay() {
+			var video = document.getElementById("myVideo");
+			video.muted = false;
+		}
+
+	</script>
+	<!-- <button onclick="myFunction()">Click me</button> -->
+
+</body>
+
+</html>

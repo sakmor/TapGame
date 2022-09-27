@@ -9,9 +9,9 @@ body{
 
 video{
 	position: absolute;
+	height: 100%;
     top: 0;  /* position the top  edge of the element at the middle of the parent */
     left: 50%; /* position the left edge of the element at the middle of the parent */
-
     transform: translate(-50%, 0); /* This is a shorthand of
                                          translateX(-50%) and translateY(-50%) */
 }
@@ -20,11 +20,15 @@ video{
 	width: 300px;
 	position: absolute;
 	z-index: 100;
-    bottom: -25%;
-	left: 45%;
+    bottom: 80px;
+	left: 40%;
 	cursor: pointer;
 }
 
+
+#unity-canvas{
+	width: 1366px; height: 768px; background: #231F20 ;top: 600pt
+}
 
 .loader{
   position: fixed;
@@ -38,6 +42,3 @@ video{
 			    background-size: 100px 100px;
 }
 
-.unity-canvas {
- margin: 120px;
-}

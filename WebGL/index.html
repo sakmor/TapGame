@@ -15,17 +15,20 @@
 <body style="text-align: center">
 	<div class="loader"></div>
 	<div class="video-wrap">
-		<canvas id="unity-canvas" width=1366 height=768
-			style="width: 1366px; height: 768px; background: #231F20 ;top: 60pt"></canvas>
+		<canvas id="unity-canvas"></canvas>
 		<center><video id="myVideo"
-				src="https://drive.google.com/uc?export=download&id=1ylrdtOnDvqbb5_pouizOi4Ufied1eFeQ" type='video/mp4'" autoplay loop playsinline muted></video></center>
-		<img class=" start" src="./img/GAME setting-38 .png" alt="">
+				src="https://drive.google.com/uc?export=download&id=1ylrdtOnDvqbb5_pouizOi4Ufied1eFeQ" type='video/mp4'" autoplay loop playsinline muted></video></center> 
+				<img class=" start" src="./img/GAME setting-38 .png" alt="">
 	</div>
 
-	<script src="Build/WebGL.loader.js"></script>
+	<script src=" Build/WebGL.loader.js"></script>
 	<script id="customerLandscape" src="js/landscape.js" charset="utf-8" isvertical="0"></script>
 	<script>
+
 		$(document).ready(function () {
+			$("video").hide();
+			myVid = document.getElementById("myVideo");
+			myVid.onloadedmetadata = hiedLoader();
 			document.addEventListener('pointerdown', musicPlay);
 			// Handler for .ready() called.
 			$(".start").click(function () {
@@ -38,37 +41,38 @@
 			// Mobile device style: fill the whole browser client area with the game canvas:
 			var meta = document.createElement('meta');
 			meta.name = 'viewport';
-			meta.content = 'width=device-width, height=device-height, initial-scale=0.4, user-scalable=no, shrink-to-fit=yes';
+			meta.content = 'width=device-width, height=device-height, initial-scale=0.45, maximum-scale=0.45,user-scalable=no, shrink-to-fit=yes';
 			document.getElementsByTagName('head')[0].appendChild(meta);
 		}
 		var myGameInstance = null;
 		myGameInstance = createUnityInstance(document.querySelector("#unity-canvas"), {
-			dataUrl: "Build/82537c57c06def8ed138acd439e3ddfa.data",
-			frameworkUrl: "Build/6fd81cc239591c07bf679b42f2457ba9.js",
-			codeUrl: "Build/92b1f286cfe7fed07769af0f654be38d.wasm",
+			dataUrl: "Build/0d9db8fba2182854b9e1fa3ee10fa959.data",
+			frameworkUrl: "Build/bbc74e2d74f40c62a6efbae4ebb19a9c.js",
+			codeUrl: "Build/0b8dd434e47763789507966d653eb528.wasm",
 			streamingAssetsUrl: "StreamingAssets",
 			companyName: "mipipi",
 			productName: "Tap",
 			productVersion: "1.0",
 			// matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
 			// devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
-		}, (p) => { if (p >= 1) hiedLoader() });
+		}, (p) => { console.log(p); if (p >= 1) hiedLoader(); });
 
-		var vid = document.getElementById("myVideo");
-		vid.oncanplay = function () {
-			hiedLoader();
-		};
+
 
 		function myFunction() {
 			myGameInstance.then((unityInstance) => {
 				unityInstance.SendMessage("Main", "DoStartGame");
+				unityInstance.SetFullscreen(1);
 			});
 		}
 
 		var count = 0;
 		function hiedLoader() {
 			count++;
-			if (count >= 2) setTimeout(() => { $(".loader").hide() }, 3000);
+			if (count > 1) {
+				$("video").show();
+				setTimeout(() => { $(".loader").hide(); }, 3000);
+			}
 		}
 
 		function musicPlay() {

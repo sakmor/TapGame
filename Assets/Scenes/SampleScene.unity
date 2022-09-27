@@ -736,7 +736,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &140345151
 RectTransform:
   m_ObjectHideFlags: 0
@@ -755,7 +755,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 840}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &140345152
 MonoBehaviour:
@@ -777,7 +777,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: e68c6bf0a21097445af3a413158e1798, type: 3}
+  m_Texture: {fileID: 8400000, guid: 9bcad2c009343514b8208b64cd79449f, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -804,8 +804,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86710e43de46f6f4bac7c8e50813a599, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AspectMode: 2
-  m_AspectRatio: 1.7839721
+  m_AspectMode: 1
+  m_AspectRatio: 1
 --- !u!1 &163494129
 GameObject:
   m_ObjectHideFlags: 0
@@ -3781,7 +3781,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1118207391
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4087,7 +4087,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 48.09998, y: -85}
+  m_AnchoredPosition: {x: 48.100098, y: -85}
   m_SizeDelta: {x: 300, y: 60}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1203153374
@@ -4463,7 +4463,7 @@ VideoPlayer:
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_SkipOnDrop: 0
   m_Looping: 1
   m_WaitForFirstFrame: 1
@@ -4638,7 +4638,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1449357936}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -5883,7 +5883,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 48.099976, y: -39}
+  m_AnchoredPosition: {x: 48.100098, y: -39}
   m_SizeDelta: {x: 300, y: 60}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1656822154
@@ -6357,7 +6357,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: -10
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2c9d5301264d44b348e9843664604f8c, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -6421,7 +6421,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1717188487
@@ -6695,7 +6695,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

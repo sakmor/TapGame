@@ -130,7 +130,7 @@ public class GameMain : MonoBehaviour
 
 		NameStartGameBtn.onClick.AddListener(() =>
 		{
-			DoGameStart();
+			DoStartGame();
 		});
 
 		QuitBtn.onClick.AddListener(() =>
@@ -155,11 +155,10 @@ public class GameMain : MonoBehaviour
 		//         MobileOrientationDetector.Init();
 		// #endif
 	}
-
-	public void DoGameStart()
+	public void DoStartGame()
 	{
 		InputNamePanel.gameObject.SetActive(false);
-
+		StartUI.SetActive(false);
 		GameUI.SetActive(true);
 		GameMusic.Play();
 		GameStart = true;
@@ -167,8 +166,8 @@ public class GameMain : MonoBehaviour
 		//             MobileOrientationDetector.ScreenLock();
 		// #endif
 		SetLevel();
-	}
 
+	}
 	private void Update()
 	{
 		if (GameStart)

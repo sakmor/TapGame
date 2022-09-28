@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>Unity WebGL Player | Tap</title>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="main.css">
 	<!-- <script src="main.js"></script> -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
@@ -13,11 +14,14 @@
 </head>
 
 <body style="text-align: center">
-	<div class="loader"></div>
+	<div class="loader">
+		<div class="w3-border">
+			<div id="progressbar" class="w3-grey" style="height:12px;width:20%"></div>
+		</div>
+	</div>
 	<div class="video-wrap">
 		<canvas id="unity-canvas"></canvas>
-		<center><video id="myVideo"
-				src="https://drive.google.com/uc?export=download&id=1ylrdtOnDvqbb5_pouizOi4Ufied1eFeQ" type='video/mp4'" autoplay loop playsinline muted></video></center> 
+		<center><video id="myVideo" src="./StartMovie.mp4" type='video/mp4'" autoplay loop playsinline muted></video></center> 
 				<img class=" start" src="./img/GAME setting-38 .png" alt="">
 	</div>
 
@@ -26,7 +30,7 @@
 	<script>
 
 		$(document).ready(function () {
-			$("video").hide();
+
 			myVid = document.getElementById("myVideo");
 			myVid.onloadedmetadata = hiedLoader();
 			document.addEventListener('pointerdown', musicPlay);
@@ -46,7 +50,7 @@
 		}
 		var myGameInstance = null;
 		myGameInstance = createUnityInstance(document.querySelector("#unity-canvas"), {
-			dataUrl: "Build/ba28b21908b8e5aa86d5ed5433afff7d.data",
+			dataUrl: "Build/5d3e40ee6a073ea92413ab836332166f.data",
 			frameworkUrl: "Build/c458c16c26554a53f17f269e0e29bac1.js",
 			codeUrl: "Build/373f60f8438259c8398ea6a91778442b.wasm",
 			streamingAssetsUrl: "StreamingAssets",
@@ -55,7 +59,10 @@
 			productVersion: "1.0",
 			// matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
 			// devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
-		}, (p) => { console.log(p); if (p >= 1) hiedLoader(); });
+		}, (p) => {
+			console.log(p); if (p >= 1) hiedLoader();
+			document.getElementById("progressbar").style.width = p * 100 + "%";
+		});
 
 
 
@@ -71,7 +78,7 @@
 			count++;
 			if (count > 1) {
 				$("video").show();
-				setTimeout(() => { $(".loader").hide(); }, 1000);
+				setTimeout(() => { $(".loader").hide(); }, 2000);
 			}
 		}
 

@@ -21,6 +21,7 @@ video {
 }
 
 .start {
+
 	width: 300px;
 	position: absolute;
 	z-index: 100;
@@ -29,6 +30,17 @@ video {
 	cursor: pointer;
 }
 
+.w3-border {
+	height: 12px;
+	width: 40%;
+	text-align: center;
+	position: absolute;
+	z-index: 100;
+	bottom: 50%;
+	left: 30%;
+
+	cursor: pointer;
+}
 
 #unity-canvas {
 	width: 1366px;
@@ -62,6 +74,6 @@ video {
 	width: 100%;
 	height: 100%;
 	z-index: 9999;
-	background: url('./img/loading.gif') 50% 50% no-repeat rgb(249, 249, 249);
-	background-size: 100px 100px;
+	background: 50% 50% no-repeat rgb(249, 249, 249);
+	background-size: 50px 50px;
 }

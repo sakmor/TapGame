@@ -5,42 +5,6 @@
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>Unity WebGL Player | Tap</title>
-</head>
-
-<body style="text-align: center">
-	<canvas id="unity-canvas" width=1366 height=768 style="width: 1366px; height: 768px; background: #231F20"></canvas>
-	<script src="Build/WebGL.loader.js"></script>
-	<script>
-		if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-			// Mobile device style: fill the whole browser client area with the game canvas:
-			var meta = document.createElement('meta');
-			meta.name = 'viewport';
-			meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-			document.getElementsByTagName('head')[0].appendChild(meta);
-		}
-
-		createUnityInstance(document.querySelector("#unity-canvas"), {
-			dataUrl: "Build/50280d32f212a88d693e55fb3a68251c.data.unityweb",
-			frameworkUrl: "Build/d9d8a4d2696bd4ec13388cdb8d1d9e81.js.unityweb",
-			codeUrl: "Build/e6c6c1a82d63f5f6047a407d561c3eee.wasm.unityweb",
-			streamingAssetsUrl: "StreamingAssets",
-			companyName: "mipipi",
-			productName: "Tap",
-			productVersion: "1.0",
-			// matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-			// devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
-		});
-	</script>
-</body>
-
-</html>
-<!DOCTYPE html>
-<html lang="en-us">
-
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>Unity WebGL Player | Tap</title>
 	<link rel="stylesheet" href="main.css">
 	<!-- <script src="main.js"></script> -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
@@ -82,9 +46,9 @@
 		}
 		var myGameInstance = null;
 		myGameInstance = createUnityInstance(document.querySelector("#unity-canvas"), {
-			dataUrl: "Build/a246f204e7768524be407bc8b2105486.data",
-			frameworkUrl: "Build/d9d8a4d2696bd4ec13388cdb8d1d9e81.js",
-			codeUrl: "Build/e6c6c1a82d63f5f6047a407d561c3eee.wasm",
+			dataUrl: "Build/0aa2b291963c0f38964c74c15ecd205a.data",
+			frameworkUrl: "Build/c458c16c26554a53f17f269e0e29bac1.js",
+			codeUrl: "Build/373f60f8438259c8398ea6a91778442b.wasm",
 			streamingAssetsUrl: "StreamingAssets",
 			companyName: "mipipi",
 			productName: "Tap",

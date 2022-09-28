@@ -20,7 +20,7 @@ public class GameMain : MonoBehaviour
 	public GameObject GameUI;
 	public GameObject GameEndUI;
 	public AudioSource GameMusic;
-	public VideoPlayer StartVideo;
+	// public VideoPlayer StartVideo;
 	public Text TimeText;
 
 	[Header("Input Name Panel")]
@@ -92,14 +92,14 @@ public class GameMain : MonoBehaviour
 		{
 			LogoUIBtn.gameObject.SetActive(false);
 			StartUI.SetActive(true);
-			StartVideo.Play();
+			// StartVideo.Play();
 			// MobileOrientationDetector.ScreenLock();
 		});
 
 		m_StartBtn.onClick.AddListener(() =>
 		{
 			StartUI.SetActive(false);
-			StartVideo.Stop();
+			// StartVideo.Stop();
 
 			InputNamePanel.gameObject.SetActive(false);
 
@@ -241,10 +241,10 @@ public class GameMain : MonoBehaviour
 		}
 
 		MonsterU.AnimControl();
-		ChangeMonster = false;
+
 		PlayerAttack(0);
 	}
-	bool ChangeMonster = false;
+
 	bool IsGameOver = false;
 	public void PlayerAttack(int hp)
 	{
@@ -285,7 +285,7 @@ public class GameMain : MonoBehaviour
 			if (NowMonsterHP <= 0)
 			{
 				PlaySound(DamSound);
-				ChangeMonster = true;
+
 				SetScore(mNowLevel * 1000 + ((int)mBounsTimeScore * 10));
 				//DOTween.To(() => Score, x => Score = x, Score + mNowLevel * 1000 + ((int)mBounsTimeScore * 10), 0.2f);
 				if (mNowLevel < 3)

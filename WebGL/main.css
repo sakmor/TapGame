@@ -27,9 +27,24 @@ video{
 
 
 #unity-canvas{
-	width: 1366px; height: 768px; background: #231F20 ;top: 600pt
+	width: 1366px; height: 768px; background: #231F20 ;
+	
 }
 
+@media only screen and (max-width: 900px) {
+  #unity-canvas {
+    width: 614px; height: 345px; background: #231F20 ;
+  }
+  .start{
+	width: 120px;
+	position: absolute;
+	z-index: 100;
+    bottom: 30px;
+	left: 45%;
+	cursor: pointer;
+}
+
+}
 .loader{
   position: fixed;
   left: 0px;

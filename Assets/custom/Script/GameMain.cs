@@ -34,8 +34,8 @@ public class GameMain : MonoBehaviour
 	public RectTransform MonsterTrans;
 	public UIAnim MonsterU;
 	public Image MonsterHPBar;
-	public Text MonsterNameText;
-	public List<string> MonsterNames;
+	public Image MonsterNameImage;
+	public List<Sprite> MonsterSprites;
 	[Header("Monster Image")]
 	public List<Sprite> Level1_Monster;
 	public List<Sprite> Level2_Monster;
@@ -62,9 +62,9 @@ public class GameMain : MonoBehaviour
 	public GameObject GameOverPage;
 	public Text ScoreText;
 	public Text GameScoreText;
-	public List<string> MarqueeStrs;
+	public List<Sprite> MarqueeStrs;
 	public GameObject MarqueeRoot;
-	public Text WinTitleMarquee;
+	public Image WinTitleMarqueeImage;
 	public Button QuitBtn;
 	public Button ReStartBtn;
 	Tweener mPosTweener, mColorTweener;
@@ -216,14 +216,14 @@ public class GameMain : MonoBehaviour
 		{
 			case 3:
 				mBounsTimeScore = mBounsTimeScore + 150;
-				MonsterNameText.text = MonsterNames[2];
+				MonsterNameImage.sprite = MonsterSprites[2];
 				MonsterU.IdelAnim = Level3_Monster;
 				mMonsterMaxHP = NowMonsterHP = L3_HP;
 				break;
 
 			case 2:
 				mBounsTimeScore = mBounsTimeScore + 100;
-				MonsterNameText.text = MonsterNames[1];
+				MonsterNameImage.sprite = MonsterSprites[1];
 				MonsterU.IdelAnim = Level2_Monster;
 				mMonsterMaxHP = NowMonsterHP = L2_HP;
 				break;
@@ -234,7 +234,7 @@ public class GameMain : MonoBehaviour
 				sw.Start();//�X���}�l�p��
 				IsGameOver = false;
 				mBounsTimeScore = 300;
-				MonsterNameText.text = MonsterNames[0];
+				MonsterNameImage.sprite = MonsterSprites[0];
 				MonsterU.IdelAnim = Level1_Monster;
 				NowMonsterHP = mMonsterMaxHP = L1_HP;
 				break;
@@ -318,9 +318,9 @@ public class GameMain : MonoBehaviour
 		//        }
 		//    }
 		//});
-		WinTitleMarquee.text = MarqueeStrs[UnityEngine.Random.Range(0, 3)];
+		WinTitleMarqueeImage.sprite = MarqueeStrs[UnityEngine.Random.Range(0, 3)];
 		MarqueeRoot.SetActive(true);
-		WinTitleMarquee.rectTransform.DOMoveX(0, 1f).OnComplete(() => { });
+		WinTitleMarqueeImage.rectTransform.DOLocalMoveX(0, 1f).OnComplete(() => { });
 		GameOverPage.SetActive(true);
 	}
 

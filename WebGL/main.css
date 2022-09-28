@@ -1,60 +1,67 @@
-body{
+body {
 	margin: 0;
 }
 
-.video-wrap{
+.video-wrap {
 	position: relative;
 
 }
 
-video{
+video {
 	position: absolute;
 	height: 100%;
-    top: 0;  /* position the top  edge of the element at the middle of the parent */
-    left: 50%; /* position the left edge of the element at the middle of the parent */
-    transform: translate(-50%, 0); /* This is a shorthand of
+	top: 0;
+	/* position the top  edge of the element at the middle of the parent */
+	left: 50%;
+	/* position the left edge of the element at the middle of the parent */
+	transform: translate(-50%, 0);
+	/* This is a shorthand of
                                          translateX(-50%) and translateY(-50%) */
-	z-index: 100;
+	z-index: auto;
 }
 
-.start{
+.start {
 	width: 300px;
 	position: absolute;
 	z-index: 100;
-    bottom: 80px;
+	bottom: 80px;
 	left: 40%;
 	cursor: pointer;
 }
 
 
-#unity-canvas{
-	width: 1366px; height: 768px; background: #231F20 ;
-	
+#unity-canvas {
+	width: 1366px;
+	height: 768px;
+	background: #231F20;
+
 }
 
 @media only screen and (max-width: 900px) {
-  #unity-canvas {
-    width: 614px; height: 345px; background: #231F20 ;
-  }
-  .start{
-	width: 120px;
-	position: absolute;
-	z-index: 100;
-    bottom: 30px;
-	left: 45%;
-	cursor: pointer;
-}
+	#unity-canvas {
+		width: 614px;
+		height: 345px;
+		background: #231F20;
+	}
+
+	.start {
+		width: 120px;
+		position: absolute;
+		z-index: 100;
+		bottom: 30px;
+		left: 45%;
+		cursor: pointer;
+	}
 
 }
-.loader{
-  position: fixed;
-  left: 0px;
-  top: 0px;
-  width: 100%;
-  height: 100%;
-  z-index: 9999;
-  background: url('./img/loading.gif') 
-              50% 50% no-repeat rgb(249,249,249);
-			    background-size: 100px 100px;
-}
 
+.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url('./img/loading.gif') 50% 50% no-repeat rgb(249, 249, 249);
+	background-size: 100px 100px;
+}

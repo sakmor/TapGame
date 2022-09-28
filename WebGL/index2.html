@@ -41,12 +41,12 @@
 			// Mobile device style: fill the whole browser client area with the game canvas:
 			var meta = document.createElement('meta');
 			meta.name = 'viewport';
-			meta.content = 'width=device-width, height=device-height, initial-scale=0.45, maximum-scale=0.45,user-scalable=no, shrink-to-fit=yes';
+			meta.content = 'width=device-width, height=device-height, initial-scale=1, maximum-scale=1,user-scalable=no, shrink-to-fit=yes';
 			document.getElementsByTagName('head')[0].appendChild(meta);
 		}
 		var myGameInstance = null;
 		myGameInstance = createUnityInstance(document.querySelector("#unity-canvas"), {
-			dataUrl: "Build/0aa2b291963c0f38964c74c15ecd205a.data",
+			dataUrl: "Build/ba28b21908b8e5aa86d5ed5433afff7d.data",
 			frameworkUrl: "Build/c458c16c26554a53f17f269e0e29bac1.js",
 			codeUrl: "Build/373f60f8438259c8398ea6a91778442b.wasm",
 			streamingAssetsUrl: "StreamingAssets",
@@ -71,7 +71,7 @@
 			count++;
 			if (count > 1) {
 				$("video").show();
-				setTimeout(() => { $(".loader").hide(); }, 3000);
+				setTimeout(() => { $(".loader").hide(); }, 1000);
 			}
 		}
 
